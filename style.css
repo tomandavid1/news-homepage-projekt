@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root {
+  --primary-orange: hsl(35, 77%, 62%);
+  --primary-red: hsl(5, 85%, 63%);
+
+  --neutral-white: hsl(36, 100%, 99%);
+  --neutral-light-blue: hsl(233, 8%, 79%);
+  --neutral-dark-blue: hsl(236, 13%, 42%);
+  --neutral-darker-blue: hsl(240, 100%, 5%);
+
+  --font-regular: 400;
+  --font-bold: 700;
+  --font-extra: 800;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: var(--font-regular);
+  background-color: var(--neutral-white);
+  max-width: 1114px;
+  margin-inline: auto;
+  padding: 0 1rem;
+  color: var(--neutral-darker-blue);
+}
+a {
+  color: var(--neutral-darker-blue);
+}
+p {
+  color: var(--neutral-dark-blue);
+}
+
+/* HEADER BOTH */
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+.header-navigation{
+  list-style-type: none;
+}
+.header-navigation a:hover {
+  color: var(--primary-red);
+}
+.mobile-nav-btn > img {
+  cursor: pointer;
+  padding: .5rem;
+}
+#mobile-nav {
+  display: none;
+}
+
+/* MAIN LANDING BOTH */
+
+.main-message-heading h2 {
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: var(--font-extra);
+}
+.landing-read-more {
+  display: block;
+  color: var(--neutral-white);
+  background-color: var(--primary-red);
+  border: none;
+  padding: .7rem 0;
+  letter-spacing: .2rem;
+  width: 14rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+.landing-read-more:hover {
+  background-color: var(--neutral-darker-blue);
+  cursor: pointer;
+}
+
+/* news section */
+
+.main-news {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  background-color: var(--neutral-darker-blue);
+  color: var(--neutral-white);
+  min-height: 27rem;
+}
+
+.main-news h2 {
+  font-size: 2.4rem;
+  color: var(--primary-orange);
+}
+.main-news h3 a {
+  color: var(--neutral-white);
+}
+.main-news h3 {
+  padding: .3rem 0;
+}
+
+.main-news hr {
+  width: 100%;
+  border-color: var(--neutral-dark-blue);
+}
+.main-news p {
+  color: var(--neutral-light-blue);
+}
+
+.main-news h3 a:hover {
+  color: var(--primary-orange);
+}
+
+/* blog top section */
+
+.blog-top section div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  justify-content: space-around;
+  padding-left: 1rem;
+}
+.blog-top img {
+  float: left;
+  height: 8rem;
+}
+.blog-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 4rem;
+}
+.blog-top-number {
+  color: var(--neutral-light-blue);
+  font-size: 2rem;
+  font-weight: var(--font-bold);
+}
+.blog-top a:hover {
+  color: var(--primary-red);
+}
+
+/* Desktop CSS */
+@media only screen and (min-width: 60rem){
+  /* MAIN */
+  .main-wrapper {
+    display: flex;
+    gap: 2rem;
+  }
+  .main-wrapper section {
+    min-width: 21rem;
+
+  }
+  .main-message-heading{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 0rem 0rem 0rem;
+  }
+  .main-message-heading div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .main-message-heading h2 {
+    padding-right: 1rem;
+  }
+  
+}
+/* DESKTOP NAV */
+@media only screen and (min-width: 48rem) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+  }
+  .header-navigation {
+    display: flex;
+  }
+  .header-navigation>li>a {
+    padding: 1rem;
+  }
+  .mobile-nav-btn {
+    display: none;
+  }
+  
+}
+/* Mobile CSS*/
+@media only screen and (max-width: 60rem){
+.main-message section:nth-child(2){
+  padding: 2rem 0;
+}
+.main-message-heading h2 {
+  margin-bottom: 1rem;
+}
+.blog-top {
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+}
+
+/* Mobile NAVIGATION*/
+@media only screen and (max-width: 48rem){
+header {
+  padding: 2rem 0;
+  box-sizing: border-box;
+  height: 6.5rem;
+}
+.header-navigation {
+  position: fixed;
+  width: 100dvw;
+  text-align: center;
+  padding: 0;
+  right: 0;
+  display: none;
+  transition: all .5s;
+  padding: 1rem 0 1rem 0;
+  background-color: var(--neutral-white);
+  box-shadow: 0px 71px 82px -31px rgba(0,0,0,0.14);
+}
+.header-navigation > li > a {
+  font-size: 1.2rem;
+}
+.header-navigation > li {
+  line-height: 5rem;
+}
+#mobile-nav:checked ~ .header-navigation {
+display: block;
+}
+#mobile-nav:checked ~ body {
+overflow: hidden;
+}
+}
