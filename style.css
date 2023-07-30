@@ -161,7 +161,7 @@ header {
   
 }
 /* DESKTOP NAV */
-@media only screen and (min-width: 48rem) {
+@media only screen and (width > 48rem) {
   header {
     display: flex;
     justify-content: space-between;
@@ -194,7 +194,7 @@ header {
 }
 
 /* Mobile NAVIGATION*/
-@media only screen and (max-width: 48rem){
+@media only screen and (width <= 48rem){
 header {
   padding: 2rem 0;
   box-sizing: border-box;
